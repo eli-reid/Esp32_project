@@ -26,13 +26,6 @@ extern "C" {
 
 typedef uint8_t I2C_address_t;
 
-typedef struct {
-  uint8_t Index;
-  uint8_t Data[I2C_BUFFER_SIZE];
-  const uint8_t size;
-} I2C_Buffer_t;  
-
-typedef unsigned int ack_t;
 #ifdef	__cplusplus
 }
 #endif

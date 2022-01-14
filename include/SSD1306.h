@@ -16,15 +16,16 @@ extern "C" {
 class ssdLCD{
 private:
     I2CMaster *_i2cPtr;
+    I2C_Buffer_t _buffer;
     I2C_address_t _address;
     void _send();
 public:
-    ssdLCD(I2CMaster *i2cPtr, I2C_address_t address);
+    ssdLCD(I2CMaster *i2cPtr, I2C_Buffer_t buffer, I2C_address_t address);
     ssdLCD();
     void init();
     void clrScreen(uint8_t color);
-    void printChar(char chr, uint8_t row,uint8_t col);
-    void printStr(char* str, uint8_t row,uint8_t col, bool bold);
+    void printChar(char chr, uint8_t row, uint8_t col);
+    void printStr(char* str, uint8_t row, uint8_t col, bool bold);
     void screenTest();
  };
 

@@ -11,9 +11,9 @@ extern "C" {
 }
 
 void app_main() {
-    I2CMaster i =I2CMaster(0);
-    ssdLCD l = ssdLCD(&i, SSD1306_ADDR);
+    I2CMaster i = I2CMaster(0);
+    I2C_Buffer_t writeBuffer;
+    ssdLCD l = ssdLCD(&i, writeBuffer, SSD1306_ADDR);
     l.init();
-    l.printStr((char*)"hello World!", 0,0,1);
-    
+    //l.printStr((char*)"hello World!", 0,0,1); 
 }
